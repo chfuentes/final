@@ -24,7 +24,7 @@ El archivo `config/sqlNode.txt` contiene informacion util si se desea migrar a o
     $ node start
 
 ## Acceder a demo
-Ingresar a `64.227.7.198`
+Ingresar a `164.92.89.235`
 utilizar usuario `christian\password`
 Para crear un libro, seleccionar el boton `Crear` y completar los campos requeridos
 Para editar un libro, desde el menu de acciones seleccionar `Editar`. Completar los datos de edicion y confirmar los cambios
