@@ -23,3 +23,4 @@ El archivo `config/sqlNode.txt` contiene informacion util si se desea migrar a o
 
     $ node start
 
+ASDAFFFAFA
