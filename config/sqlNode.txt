@@ -1,0 +1,29 @@
+
+Created!
+
+You have successfully created a new database. The details are below.
+
+Username: JXQnLJ7zfo
+
+Database name: JXQnLJ7zfo
+
+Password: dErOdNKblD
+
+Server: remotemysql.com
+
+Port: 3306
+
+These are the username and password to log in to your database and phpMyAdmin
+
+Make sure you keep your password secure. Ensure you keep back ups of your database in case it gets deleted.
+
+
+
+CREATE TABLE `JXQnLJ7zfo`.`usuarios` ( `id` INT NOT NULL AUTO_INCREMENT , `nombre` VARCHAR(15) NOT NULL , `password` VARCHAR(15) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+INSERT INTO `usuarios` (`nombre`, `password`) VALUES ('christian', 'password');
+INSERT INTO `usuarios` (`nombre`, `password`) VALUES ('mitest', 'mitest');
+
+CREATE TABLE `JXQnLJ7zfo`.`logs` ( `id` INT NOT NULL AUTO_INCREMENT , `fechaHora` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , `usuario` INT NOT NULL , `descripción` VARCHAR(500) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+insert into `logs` (usuario, descripción) values (1,'Test')
+CREATE TABLE `JXQnLJ7zfo`.`libros` ( `id` INT NOT NULL AUTO_INCREMENT , `titulo` VARCHAR(100) NOT NULL , `autor` VARCHAR(500) NOT NULL , `descripción` VARCHAR(500) NOT NULL , `imagen` VARCHAR(500) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;

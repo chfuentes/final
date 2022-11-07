@@ -1,0 +1,64 @@
+<%- include ../layouts/cabecera.ejs %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <a href="/libros/crear" class="btn btn-primary" type="button">Crear Libro</a>
+            </div>
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4">
+                <a href="/salir" class="btn btn-danger" type="button">Salir</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Descripcion</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for( let ii=0; ii < libros.length; ii++ ) { %>
+                <tr>
+                    <td>
+                        <%=libros[ii].id %>
+                    </td>
+                    <td>
+                        <%=libros[ii].titulo %>
+                    </td>
+                    <td>
+                        <%=libros[ii].autor %>
+                    </td>
+                    <td>
+                        <%=libros[ii].descripcion %>
+                    </td>
+                    <td>
+                        <img class="img-thumbnail" width="50" src="../../images/<%=libros[ii].imagen %>" alt="">
+                    </td>
+                    <td>
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline" method="get" action="/libros/editar/<%=libros[ii].id %>">
+                                <button class="btn btn-warning" type="submit">Editar</button>
+                            </form>
+                        </div>
+
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline" method="post" action="/libros/eliminar/<%=libros[ii].id %>"
+                                onsubmit="return confirm('Desea eliminar el registro?');">
+                                <button class="btn btn-danger" type="submit">Borrar</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+    <%- include ../layouts/pie.ejs %>

@@ -1,0 +1,21 @@
+<%- include ./layouts/cabeceraindex.ejs %>
+
+  <h1>
+    <%= title %>
+  </h1>
+  <p>App <%= title %>
+  </p>
+
+  <div class="container-fluid">
+    <div class="row">
+      <form class="form" method="post" action="/ingresar">
+        <label for="nombre">Nombre de usuario:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+        <label for="password ">Password:</label><br>
+        <input type="password" id="password " name="password"><br><br>
+        <button class="btn btn-danger" type="submit">Ingresar</button>
+      </form>
+    </div>
+  </div>
+
+  <%- include ./layouts/pie.ejs %>

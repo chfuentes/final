@@ -1,0 +1,69 @@
+<%- include ../layouts/cabeceraindex.ejs %>
+    <style>
+        .help {
+            display: none;
+        }
+
+        .invalid .help {
+            display: block;
+        }
+
+        .invalid label,
+        .invalid input,
+        .invalid .help {
+            color: red;
+            border-color: red;
+        }
+    </style>
+    <form id="my-form" method="post" action="/libros" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="my-input-titulo">Titulo</label>
+            <input id="my-input-titulo" class="form-control" type="text" maxlength="50" name="titulo" required>
+            <p class="help">Campo obligatorio.</p>
+        </div>
+
+        <div class="form-group">
+            <label for="my-input-autor">Autor</label>
+            <input id="my-input-autor" class="form-control" type="text" maxlength="50" name="autor" required>
+            <p class="help">Campo obligatorio.</p>
+        </div>
+
+        <div class="form-group">
+            <label for="my-input-descripcion">Descripcion</label>
+            <input id="my-input-descripcion" class="form-control" type="text" maxlength="50" name="descripcion" required>
+            <p class="help">Campo obligatorio.</p>
+        </div>
+
+        <div class="form-group">
+            <label for="my-file">Imagen</label>
+            <input id="my-file" class="form-control-file" type="file" name="imagen"
+                accept="image/png, image/jpeg, image/jpg" required>
+            <p class="help">Campo obligatorio.</p>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Guardar</button>
+    </form>
+
+    <script type="text/javascript">
+        const myform = document.getElementById('myform');
+        myform.noValidate = true;
+        myform.addEventListener('submit', validateForm);
+        function validateForm(e) {
+            const
+                form = e.target,
+                field = Array.from(form.elements);
+            field.forEach(i => {
+                if (i.checkValidity()) {
+                    i.parentElement.classList.remove('invalid');
+                }
+                else {
+                    i.parentElement.classList.add('invalid');
+                }
+            });
+            if (!form.checkValidity()) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+            }
+        };
+    </script>
+    <%- include ../layouts/pie.ejs %>
