@@ -10,8 +10,8 @@ Solo para ambiente de desarrollo, se necesita solo Node.js y npm instalado.
 
 ## Instalacion
 
-    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
-    $ cd PROJECT_TITLE
+    $ git clone https://github.com/chfuentes/final
+    $ cd final
     $ npm install
 
 ## Configuracion de BD
